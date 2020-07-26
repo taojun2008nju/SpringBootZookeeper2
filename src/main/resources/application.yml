@@ -1,10 +1,10 @@
 project:
-  application: vas-adapter-api
-  name: vas-adapter-api
-  chineseName: VAS基地适配层工程
-  version:  ADAPTER_JD_V3R3D0320
-  unpackTime: 2019/5/21
-  PIC: wjggwm
+  application: SpringBootZookeeperConsumer
+  name: SpringBootZookeeperConsumer
+  chineseName: SpringBoot工程Zookeeeper样例
+  version:  1.0
+  unpackTime: 2020/07/26
+  PIC: taojun
   versionControlNo: 1.0
   versionControlPath:
   framework: SpringBoot
