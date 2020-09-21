@@ -10,10 +10,10 @@ project:
   framework: SpringBoot
 
 server:
-  port: 8080
+  port: 8081
   tomcat:
     uri-encoding: UTF-8
-    display-name: vas-adapter-api
+    display-name: SpringBoot
     basedir: /tomcat
     accesslog:
       enabled: true
@@ -28,15 +28,15 @@ server:
       suffix: .log
   # 上下文路径
   servlet:
-    context-path: /vas-adapter-api
-    display-name: vas-adapter-api
+    context-path: /springBootZookeeperConsumer
+    display-name: springBootZookeeperConsumer
 
 spring:
   profiles:
     #各个环境配置文件，需要修改  开发：dev， 测试：test，生产：prod
-    active: dev
+    active: prod
   application:
-    name: vas-adapter-api
+    name: springBootZookeeperConsumer
   task:
     pool:
       corePoolSize: 20
@@ -68,7 +68,7 @@ spring:
       #此dubbo过滤器可无需配置
       filter: providerRpcTraceFilter
       #版本号分组信息
-      group: zj
+      group: test
       version: 1.0
     consumer:
       check: false
@@ -79,7 +79,7 @@ spring:
       #此dubbo过滤器可无需配置
       filter: consumerRpcTraceFilter
       #版本号分组信息
-      group: zj
+      group: test
       version: 1.0
   kafka:
 # 以逗号分隔的地址列表，用于建立与Kafka集群的初始连接(kafka 默认的端口号为9092)
@@ -97,7 +97,7 @@ spring:
         key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
         # 值的反序列化方式
         value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-        group-id: test
+        group-id: test2
       listener:
         # 在侦听器容器中运行的线程数。
         concurrency: 5

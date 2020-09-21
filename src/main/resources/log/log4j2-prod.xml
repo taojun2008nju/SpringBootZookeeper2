@@ -85,7 +85,7 @@
         <AsyncLogger level="INFO" name="org.apache.dubbo"/>
         <asyncRoot  includeLocation="true" level="INFO" additivity="false">
             <!--控制台日志，生产环境关闭-->
-<!--            <appender-ref ref="Console"/>-->
+            <appender-ref ref="Console"/>
             <!--DEBUG日志，生产环境关闭-->
             <!--<appender-ref ref="RollingFileDebug"/>-->
             <!--INFO日志，生产环境开启-->
