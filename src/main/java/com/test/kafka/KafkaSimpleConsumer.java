@@ -4,6 +4,7 @@ import com.test.constant.KafkaConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.annotation.TopicPartition;
 import org.springframework.stereotype.Component;
 
 /**
@@ -28,10 +29,28 @@ public class KafkaSimpleConsumer {
     }*/
 
     @KafkaListener(topics = KafkaConstants.TOPIC_SIMPLE)
+//    @KafkaListener(topics = KafkaConstants.TOPIC_SIMPLE, topicPartitions = { @TopicPartition(topic = KafkaConstants.TOPIC_SIMPLE, partitions = { "0" }) })
     public void consumer1(ConsumerRecord<?, ?> record) {
-        log.info("kafka的topic: {}", record.topic());
-        log.info("kafka的key: {}", record.key());
-        log.info("kafka的value: {}", record.value().toString());
-        log.info("kafka的partition: {}", record.partition());
+        log.info("consumer1 kafka的topic: {}", record.topic());
+        log.info("consumer1 kafka的key: {}", record.key());
+        log.info("consumer1 kafka的value: {}", record.value().toString());
+        log.info("consumer1 kafka的partition: {}", record.partition());
+    }
+
+//    @KafkaListener(topics = KafkaConstants.TOPIC_SIMPLE, topicPartitions = { @TopicPartition(topic = KafkaConstants.TOPIC_SIMPLE, partitions = { "1" }) })
+//    @KafkaListener(topics = KafkaConstants.TOPIC_SIMPLE)
+    public void consumer2(ConsumerRecord<?, ?> record) {
+        log.info("consumer2 kafka的topic: {}", record.topic());
+        log.info("consumer2 kafka的key: {}", record.key());
+        log.info("consumer2 kafka的value: {}", record.value().toString());
+        log.info("consumer2 kafka的partition: {}", record.partition());
+    }
+
+//    @KafkaListener(topics = KafkaConstants.TOPIC_SIMPLE, topicPartitions = { @TopicPartition(topic = KafkaConstants.TOPIC_SIMPLE, partitions = { "2" }) })
+    public void consumer3(ConsumerRecord<?, ?> record) {
+        log.info("consumer3 kafka的topic: {}", record.topic());
+        log.info("consumer3 kafka的key: {}", record.key());
+        log.info("consumer3 kafka的value: {}", record.value().toString());
+        log.info("consumer3 kafka的partition: {}", record.partition());
     }
 }

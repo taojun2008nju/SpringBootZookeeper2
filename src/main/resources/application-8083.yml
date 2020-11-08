@@ -10,7 +10,7 @@ project:
   framework: SpringBoot
 
 server:
-  port: 8082
+  port: 8083
   tomcat:
     uri-encoding: UTF-8
     display-name: SpringBoot
@@ -105,7 +105,7 @@ spring:
         ack-mode: manual_immediate
 
 logging:
-  config: classpath:log/log4j2-${spring.profiles.active}.xml
+  config: classpath:log/log4j2-prod.xml
 
 #dubbo:
 #  application:
